@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lời chúc 20/10 cho lớp 💐</title>
+<style>
+  body {
+    margin: 0;
+    background: linear-gradient(135deg, #ffd6e7, #fff0f5);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    color: #d63384;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+
+  #text {
+    font-size: 28px;
+    line-height: 1.4;
+    padding: 20px;
+    animation: fade 2s infinite;
+    max-width: 90%;
+  }
+
+  @keyframes fade {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+</style>
+</head>
+<body>
+  <div id="text"></div>
+
+  <script>
+    const wishes = [
+      "Chúc các bạn nữ luôn xinh đẹp và rạng rỡ 🌸",
+      "Chúc tập thể lớp ta luôn đoàn kết 💪",
+      "Chúc ai cũng đạt điểm cao 🎯",
+      "Chúc những ngày học vui như lễ hội 🎉",
+      "Mỗi ngày đến lớp là một ngày vui 😄",
+      "Chúc cô giáo luôn tươi trẻ 🌹",
+      "Chúc mọi người hạnh phúc và thành công 🌟",
+      "Chúc 20/10 đầy tiếng cười 💖",
+      "Hãy luôn tự tin và tỏa sáng ✨",
+      "Mọi điều tốt đẹp sẽ đến với bạn 🌈",
+      "Học tốt – chơi vui – luôn yêu đời 🎵",
+      "Chúc bạn luôn mỉm cười 🌷",
+      "Tình bạn mãi bền chặt 🤝",
+      "Cảm ơn vì đã cùng nhau vượt qua 💫",
+      "Chúc lớp ta mãi là tập thể tuyệt vời 💗",
+      "Ngày 20/10 thật ý nghĩa nhé 🌺",
+      "Thành công và hạnh phúc luôn bên bạn 💐",
+      "Hãy luôn tin vào chính mình 💪",
+      "Cuộc sống luôn đáng yêu 🌞",
+      "Mãi là chính bạn, tuyệt nhất! 💕"
+    ];
+
+    let i = 0;
+    const text = document.getElementById("text");
+
+    function showWish() {
+      text.textContent = wishes[i];
+      i = (i + 1) % wishes.length;
+    }
+
+    showWish(); // hiển thị câu đầu tiên ngay
+    setInterval(showWish, 2000);
+  </script>
+</body>
+</html>
