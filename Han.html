@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gửi Hân 💖</title>
+<style>
+  body {
+    margin: 0;
+    background: radial-gradient(circle at center, #ffe1e1, #ffc4c4);
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .heart {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background: red;
+    transform: rotate(-45deg);
+    animation: pulse 1s infinite;
+  }
+
+  .heart::before,
+  .heart::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: red;
+    border-radius: 50%;
+  }
+
+  .heart::before {
+    top: -75px;
+    left: 0;
+  }
+
+  .heart::after {
+    top: 0;
+    left: 75px;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: rotate(-45deg) scale(1); }
+    50% { transform: rotate(-45deg) scale(1.2); }
+  }
+
+  h2 {
+    color: white;
+    font-size: 36px;
+    position: absolute;
+    animation: fade 3s infinite;
+    text-align: center;
+  }
+
+  @keyframes fade {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+
+  .circle {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    animation: spin 20s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0); }
+    to { transform: rotate(360deg); }
+  }
+
+  .circle span {
+    position: absolute;
+    color: white;
+    font-size: 16px;
+    left: 50%;
+    top: 50%;
+    transform-origin: 0 -160px;
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+  <div class="heart"></div>
+  <h2>Hân 💗</h2>
+  <div class="circle" id="circle"></div>
+
+  <script>
+    const circle = document.getElementById('circle');
+    const texts = [
+      "Chúc Hân luôn cười thật tươi 🌸",
+      "Luôn rạng rỡ và hạnh phúc 💕",
+      "Mỗi ngày là một niềm vui 🌞",
+      "Xinh đẹp như đóa hồng 🌹",
+      "Mọi điều tốt đẹp nhất dành cho Hân 🌈",
+      "Hân ơi, chúc ngày 20/10 thật ý nghĩa 💗",
+      "Mong cậu luôn tự tin 💪",
+      "Chúc những ước mơ sớm thành hiện thực ✨",
+      "Mãi đáng yêu như bây giờ nhé 💫",
+      "Happy Women's Day 💐"
+    ];
+
+    texts.forEach((t, i) => {
+      const s = document.createElement('span');
+      s.textContent = t;
+      s.style.transform = `rotate(${(360 / texts.length) * i}deg) translate(0, -160px)`;
+      circle.appendChild(s);
+    });
+  </script>
+</body>
+</html>
