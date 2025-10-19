@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mẹ yêu 🌺</title>
+<style>
+  body {
+    margin: 0;
+    background: linear-gradient(#fff0f5, #ffd6e7);
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    color: #b30059;
+  }
+
+  .lotus {
+    position: relative;
+    width: 0;
+    height: 0;
+    animation: bloom 2s forwards;
+  }
+
+  @keyframes bloom {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+  }
+
+  .petal {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #ff80bf;
+    border-radius: 50% 50% 0 0;
+    transform-origin: bottom center;
+  }
+
+  .petal:nth-child(1) { transform: rotate(0deg) translateY(-50px); }
+  .petal:nth-child(2) { transform: rotate(60deg) translateY(-50px); }
+  .petal:nth-child(3) { transform: rotate(120deg) translateY(-50px); }
+  .petal:nth-child(4) { transform: rotate(180deg) translateY(-50px); }
+  .petal:nth-child(5) { transform: rotate(240deg) translateY(-50px); }
+  .petal:nth-child(6) { transform: rotate(300deg) translateY(-50px); }
+
+  h2 {
+    margin-top: 20px;
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .message {
+    position: absolute;
+    bottom: 20px;
+    font-size: 20px;
+    opacity: 0;
+    animation: fly 5s linear infinite;
+  }
+
+  @keyframes fly {
+    0% { bottom: 20px; opacity: 1; }
+    100% { bottom: 100vh; opacity: 0; }
+  }
+</style>
+</head>
+<body>
+  <div class="lotus">
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+  </div>
+
+  <h2>Chúc mừng 20/10 Mẹ yêu 💖</h2>
+
+  <div id="msg"></div>
+
+  <script>
+    const wishes = [
+      "Cảm ơn mẹ vì tất cả 💗", "Chúc mẹ thật nhiều sức khỏe 🌿",
+      "Luôn hạnh phúc và mỉm cười 🌸", "Mẹ là bông sen đẹp nhất 🌺",
+      "Con yêu mẹ vô cùng 💖", "Chúc mẹ luôn bình an và vui vẻ 💕",
+      "Cảm ơn mẹ đã dạy con nên người 🌼", "20/10 thật đặc biệt vì có mẹ 💫",
+      "Mong mẹ luôn tươi trẻ như bây giờ 🌹", "Yêu mẹ mãi mãi 💝"
+    ];
+
+    function createMsg() {
+      const m = document.createElement('div');
+      m.className = 'message';
+      m.textContent = wishes[Math.floor(Math.random() * wishes.length)];
+      m.style.left = Math.random() * 80 + '%';
+      document.body.appendChild(m);
+      setTimeout(() => m.remove(), 5000);
+    }
+
+    setInterval(createMsg, 800);
+  </script>
+</body>
+</html>
